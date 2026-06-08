@@ -4,8 +4,7 @@
 
 ## Требования
 
-- Python 3.11+ или совместимая версия
-- Docker и Docker Compose (опционально)
+- Docker и Docker Compose
 
 ## Быстрая установка (локально)
 
@@ -18,7 +17,7 @@ cd FamilyAudioLibrary
 
 ## Запуск через Docker
 
-Если вы предпочитаете контейнер, выполните:
+Выполните:
 
 ```powershell
 docker compose up --build
@@ -42,8 +41,6 @@ docker compose down
 
 - username: `admin`
 - password: `admin`
-
-Вы можете изменить учётные данные через переменные окружения перед запуском.
 
 ## Переменные окружения
 
