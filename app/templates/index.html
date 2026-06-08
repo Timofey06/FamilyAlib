@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <h1>Семейная библиотека аудиокниг</h1>
+    <div class="search-row">
+        <input id="searchInput" type="search" placeholder="Поиск по названию или автору" />
+    </div>
+    <section>
+        <h2>Продолжить прослушивание</h2>
+        <div id="continueSection" class="card-grid"></div>
+    </section>
+    <section>
+        <h2>Все книги</h2>
+        <div id="booksSection" class="card-grid"></div>
+    </section>
+</section>
+<script>
+    window.pageId = 'index'
+</script>
+{% endblock %}

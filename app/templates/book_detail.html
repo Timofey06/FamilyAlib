@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="book-detail">
+    <div class="book-card" id="bookCard"></div>
+    <div class="book-player">
+        <audio id="audioPlayer" controls style="width: 100%; margin-bottom: 20px;"></audio>
+        <div id="chapterList"></div>
+    </div>
+</section>
+<!-- Edit Book Modal -->
+<div id="editBookModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="editBookTitle">
+    <div class="modal-dialog">
+        <h2 id="editBookTitle">Изменить книгу</h2>
+        <form id="editBookForm">
+            <div class="field-group" data-field="title">
+                <label>Название</label>
+                <input name="title" type="text" required />
+                <div class="error-text" aria-live="polite"></div>
+            </div>
+            <div class="field-group" data-field="author_name">
+                <label>Автор</label>
+                <input name="author_name" type="text" required />
+                <div class="error-text" aria-live="polite"></div>
+            </div>
+            <div class="field-group" data-field="series_name">
+                <label>Серия</label>
+                <input name="series_name" type="text" />
+                <div class="error-text" aria-live="polite"></div>
+            </div>
+            <div class="field-group" data-field="series_order">
+                <label>Номер в серии</label>
+                <input name="series_order" type="number" />
+                <div class="error-text" aria-live="polite"></div>
+            </div>
+            <div class="field-group" data-field="description">
+                <label>Описание</label>
+                <textarea name="description" rows="4"></textarea>
+                <div class="error-text" aria-live="polite"></div>
+            </div>
+            <div class="field-group" data-field="cover">
+                <label>Обложка (по желанию)</label>
+                <input name="cover" type="file" accept="image/*" />
+                <div class="error-text" aria-live="polite"></div>
+            </div>
+            <div id="editProgressWrapper" class="field-group hidden">
+                <label>Прогресс загрузки</label>
+                <div class="progress-bar"><div id="editProgressFill" class="progress-fill" style="width: 0%"></div></div>
+                <div id="editProgressText" class="progress-text">0%</div>
+            </div>
+            <div class="field-group" data-field="show_to_all">
+                <label><input name="show_to_all" type="checkbox" /> Отображать всем</label>
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="cancelEditButton">Отмена</button>
+                <button type="submit" id="saveEditButton">Сохранить</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    window.pageId = 'book_detail'
+    window.currentBookId = {{ book_id }}
+</script>
+{% endblock %}

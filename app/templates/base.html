@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Family Alib</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="container">
+            <a class="logo" href="/">Family Alib</a>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="/favorites">Избранное</a>
+                <a id="adminRegisterLink" class="hidden" href="/users">Управление пользователями</a>
+                <a id="uploadLink" class="hidden" href="/upload">Загрузить</a>
+                <a id="loginLink" href="/login">Войти</a>
+            </nav>
+            <div class="user-panel">
+                <span id="currentUserName" class="user-name hidden"></span>
+                <button id="logoutButton" class="hidden logout-button" title="Выйти">→</button>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <script src="/static/js/app.js?v=2"></script>
+</body>
+</html>

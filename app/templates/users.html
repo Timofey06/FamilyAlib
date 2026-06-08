@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="admin-page">
+    <div class="admin-header">
+        <h1>Управление пользователями</h1>
+        <p>Создавайте новых пользователей и удаляйте устаревшие аккаунты.</p>
+    </div>
+    <div class="users-grid">
+        <section class="auth-form users-create-form">
+            <h2>Создать пользователя</h2>
+            <form id="createUserForm">
+                <div class="field-group" data-field="username">
+                    <label>Имя пользователя</label>
+                    <input name="username" type="text" required />
+                    <div class="error-text" aria-live="polite"></div>
+                </div>
+                <div class="field-group" data-field="password">
+                    <label>Пароль</label>
+                    <input name="password" type="password" required />
+                    <div class="error-text" aria-live="polite"></div>
+                </div>
+                <div class="field-group" data-field="passwordConfirm">
+                    <label>Повторите пароль</label>
+                    <input name="passwordConfirm" type="password" required />
+                    <div class="error-text" aria-live="polite"></div>
+                </div>
+                <button type="submit">Создать</button>
+            </form>
+        </section>
+        <section class="users-table-section">
+            <h2>Список пользователей</h2>
+            <div id="usersTableWrapper"></div>
+        </section>
+    </div>
+</section>
+<script>
+    window.pageId = 'users'
+</script>
+{% endblock %}

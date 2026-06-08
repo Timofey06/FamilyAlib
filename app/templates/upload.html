@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="upload-form">
+    <h1>Загрузить книгу</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <div class="field-group" data-field="title">
+            <label>Название</label>
+            <input name="title" type="text" required />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="author_name">
+            <label>Автор</label>
+            <input name="author_name" type="text" required />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="series_name">
+            <label>Серия</label>
+            <input name="series_name" type="text" />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="series_order">
+            <label>Номер в серии</label>
+            <input name="series_order" type="number" />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="description">
+            <label>Описание</label>
+            <textarea name="description" rows="4"></textarea>
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="cover">
+            <label>Обложка</label>
+            <input name="cover" type="file" accept="image/*" required />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="chapters">
+            <label>Файлы глав</label>
+            <input name="chapters" type="file" accept="audio/mp3,audio/mp4,audio/x-m4a,audio/x-m4b" multiple required />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="show_to_all">
+            <label>
+                <input name="show_to_all" type="checkbox" checked /> Отображать всем
+            </label>
+        </div>
+        <div id="uploadProgressWrapper" class="field-group hidden">
+            <label>Прогресс загрузки</label>
+            <div class="progress-bar"><div id="uploadProgressFill" class="progress-fill" style="width: 0%"></div></div>
+            <div id="uploadProgressText" class="progress-text">0%</div>
+        </div>
+        <button type="submit">Загрузить</button>
+    </form>
+</section>
+<script>
+    window.pageId = 'upload'
+</script>
+{% endblock %}

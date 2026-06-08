@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="auth-form">
+    <h1>Вход</h1>
+    <form id="loginForm">
+        <div class="field-group" data-field="username">
+            <label>Имя пользователя</label>
+            <input name="username" type="text" required />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <div class="field-group" data-field="password">
+            <label>Пароль</label>
+            <input name="password" type="password" required />
+            <div class="error-text" aria-live="polite"></div>
+        </div>
+        <button type="submit">Войти</button>
+    </form>
+    <p>Регистрация доступна только администратору.</p>
+</section>
+<script>
+    window.pageId = 'login'
+</script>
+{% endblock %}
