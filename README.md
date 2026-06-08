@@ -11,7 +11,7 @@
 ### Клонируйте репозиторий
 
 ```powershell
-[git clone <repository-url>](https://github.com/Timofey06/FamilyAlib.git)
+git clone https://github.com/Timofey06/FamilyAlib.git
 cd FamilyAudioLibrary
 ```
 
