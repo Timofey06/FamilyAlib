@@ -42,6 +42,14 @@ docker compose down
 - username: `admin`
 - password: `admin`
 
+## Опциональные переменные для настройки:
+
+- `DATABASE_URL` - URL базы данных (по умолчанию `sqlite:///data/app.db`)
+- `SECRET_KEY` - секретный ключ JWT
+- `ACCESS_TOKEN_EXPIRE_MINUTES` - время жизни токена в минутах (по умолчанию `720`)
+- `ADMIN_USERNAME` - логин администратора (по умолчанию `admin`)
+- `ADMIN_PASSWORD` - пароль администратора (по умолчанию `admin`)
+
 ## Как пользоваться
 
 1. Откройте `https://localhost:8000`
